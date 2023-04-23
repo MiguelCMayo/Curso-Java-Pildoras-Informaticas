@@ -1,0 +1,35 @@
+En Window -> preferences -> java -> Installed JREs -> edit -> --module-path "C:\Users\Miguel\javafx-sdk-18.0.2" --add-modules javafx.controls,javafx.fxml
+
+LAYOUTS
+
+ - HBox: Ordena los componentes en fila, uno a continuacion del otro
+ - VBox: Ordena los componentes en columna, uno debajo del otro
+ - FlowPane: Ordena los componentes uno al lado del otro hasta que se queda sin espacio, y continua en la fila siguiente
+ - BorderPane: Divide el panel en 5 regiones: top (arriba), botton (abajo), left (izquierda), Right (derecha) y center (central).
+ 
+PASOS:
+
+	1. Crear un nuevo paquete y una nueva clase javaFX (esta en other)
+	
+	2. Creamos los botones:
+		- Button boton1 = new Button("Boton 1");
+	
+	3. Creamos el HBox, VBox, BorderPane:
+		
+		- HBox miPane = new HBox(20,boton1,boton2,boton3,boton4,boton5,boton6); //EL 10 ES EL ESPACIO ENTRE BOTONES
+		
+		- VBox miPane = new VBox(20,boton1,boton2,boton3,boton4,boton5,boton6);
+		
+		- BorderPane miPane = new BorderPane(boton1,boton2,boton3,boton4,boton5);
+		  BorderPane.setAlignment(boton2, Pos.CENTER); //PARA ALINEAR LOS BOTONES
+	
+	4. Creamos la escena:
+		- Scene miScene = new Scene(miPane, 400, 200);
+	
+	5. Agregamos la escena al escenario:
+		- primaryStage.setScene(miScene);
+	
+	6. Mostramos el escenario:
+		- primaryStage.show();
+	
+	

@@ -1,0 +1,24 @@
+GridPane (crea una grilla de filas y columnas)
+
+	//CREACION DEL GRID
+		GridPane miGrid = new GridPane();
+		miGrid.setPadding(new Insets(10));
+		miGrid.setHgap(10);
+		miGrid.setVgap(10);
+		miGrid.setMinWidth(400);
+		miGrid.setPrefWidth(200);
+		miGrid.setMaxWidth(200);
+		miGrid.setMaxHeight(200);
+	
+		//Agregar nodos al grid
+		miGrid.addRow(0, txtCabecera);
+		miGrid.setColumnSpan(txtCabecera, 3);
+		miGrid.setHalignment(txtCabecera, HPos.CENTER);
+		miGrid.addRow(1, lbNombre,txtNombre);
+		miGrid.setColumnSpan(txtNombre, 2);
+		miGrid.addRow(2, lbNTelefono,txtNTelefono);
+		miGrid.setColumnSpan(txtNTelefono, 2);
+		miGrid.addRow(3, lbDireccion,txtDireccion);
+		miGrid.setColumnSpan(txtDireccion, 2);
+		miGrid.addRow(4, paneTamano, paneMasa, paneIngredientes);
+		miGrid.addRow(5, botonOk,botonCancelar);

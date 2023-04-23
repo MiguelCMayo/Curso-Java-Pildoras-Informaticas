@@ -1,0 +1,71 @@
+CERRAR CORRECTAMENTE UNA VENTANA STAGE
+
+1. Crear clase: other -> javafx Main class:
+
+	- Atributos: 
+		Stage miStage;
+		int contadorDeClics;
+		
+	- Metodos:
+	
+		@Override
+		public void start(Stage primaryStage) {
+		
+			miStage = primaryStage;
+		
+			Button botonClic = new Button();
+			botonClic.setText("Pulsar");
+			botonClic.setOnAction(e->hazmeClic());
+		
+			Button botonCerrar = new Button();
+			botonCerrar.setText("Cerrar");
+			botonCerrar.setOnAction(e->botonCerrar());
+		
+			HBox miPane = new HBox(10);
+			miPane.getChildren().addAll(botonClic,botonCerrar);
+			miPane.setAlignment(Pos.CENTER); //Pone los botones en el centro
+		
+			Scene miScene = new Scene(miPane,350,200);
+		
+			primaryStage.setScene(miScene);
+			primaryStage.setTitle("Contador de clics");
+			
+			primaryStage.setOnCloseRequest(e->{
+			e.consume();
+			botonCerrar();
+			}); //Si pulsas la x te pregunta si quieres salir y el consume para la propagacion
+			
+			primaryStage.show();
+		}
+		
+		public void hazmeClic() {
+		
+			contadorDeClics++;
+		
+			if(contadorDeClics == 1) VentanaEmergente.mostrar("Has hecho clic una vez", "Clic!");
+			else VentanaEmergente.mostrar("Has hecho clic " + contadorDeClics + " veces", "Clic!");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

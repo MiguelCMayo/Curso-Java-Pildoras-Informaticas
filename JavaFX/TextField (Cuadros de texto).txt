@@ -1,0 +1,98 @@
+TEXTFIELD
+
+PASOS:
+
+	- Introducimos los atributos de cada textField en la clase (padre)
+			
+			TextField txtEquipo, txtJugador, txtPuntos;
+			
+	- En el metodo start creamos la etiqueta (label): 
+			
+			Label lbEquipo = new Label("Nombre del equipo: ");
+			lbEquipo.setMinWidth(100);
+			lbEquipo.setAlignment(Pos.BOTTOM_RIGHT);
+			
+	- En el metodo start creamos el campo de texto (TextField):
+			
+			txtEquipo = new TextField();
+			txtEquipo.setMinWidth(200);
+			txtEquipo.setMaxWidth(200);
+			txtEquipo.setPromptText("Nombre del equipo");
+			
+	- En el metodo start creamos el boton (Button):
+	
+			Button botonGuardar = new Button("Guardar");
+			botonGuardar.setMinWidth(80);
+			botonGuardar.setMaxWidth(80);
+			
+	- En el metodo start creamos los pane:
+			
+			HBox paneEquipo = new HBox(20, lbEquipo,txtEquipo);
+			paneEquipo.setPadding(new Insets(10));
+			
+			HBox paneBoton = new HBox(20, botonGuardar);
+			paneBoton.setPadding(new Insets(10));
+			paneBoton.setAlignment(Pos.BOTTOM_RIGHT);
+			
+	- En el metodo start creamos un pane (VBox) que agrupe todos los demas pane:
+	
+			VBox panelVertical = new VBox(10, paneEquipo, paneJugador, panePuntos, paneBoton);
+			
+	- En el metodo start creamos la escena (Scene):
+	
+			Scene miScene = new Scene(panelVertical);
+			primaryStage.setScene(miScene);
+			primaryStage.setTitle("Datos del jugador");
+			primaryStage.show();
+			
+	- Creacion del metodo del boton:
+	
+			private void botonGuardarClick() {
+		
+				String mensaje = "";
+		
+				if(txtEquipo.getText().length()==0) mensaje+= "\nEl nombre del equipo es requerido";
+				if(txtJugador.getText().length()==0) mensaje+= "\nEl nombre del jugador es requerido";
+				if(txtPuntos.getText().length()==0) mensaje+= "\nLos puntos del jugador son requeridos";
+				if(mensaje.length()==0) {
+					mensaje = "El jugador " + txtJugador.getText() + " que juega en " + txtEquipo.getText() +
+							" anota " + txtPuntos.getText()	+ " puntos por partido.";
+			
+					VentanaEmergente.mostrar(mensaje,  "Datos del jugador"); //VER CREACION DE VENTANA EMERGENTE
+				}else {
+					VentanaEmergente.mostrar(mensaje, "Faltan datos!!");
+				}
+			}			
+			
+	- Añadimos el metodo del boton en el metodo start:
+	
+			botonGuardar.setOnAction(e -> botonGuardarClick());
+			
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,34 @@
+TilePane (crea cuadrados uno a continuacion del otro)
+
+	public void start(Stage primaryStage) {
+		
+		//TILEPANE UBICA LOS RECTANGULOS UNO A CONTINUACION DEL OTRO
+		TilePane miTile = new TilePane();
+		
+		//CREAR LOS RECTANGULOS Y PONER TEXTO CON UN BUCLE FOR
+		for (int i=1; i<13; i++) {
+			Rectangle r = new Rectangle(100,100);
+			r.setFill(Color.rgb(125, 240, 215));
+			Label miLabel = new Label("Cuadrado " + i);
+			StackPane miStack = new StackPane(r, miLabel);
+			miTile.getChildren().add(miStack);
+		}
+		
+		//BARRAS DE DESPLAZAMIENTO
+		ScrollPane miScroll = new ScrollPane(miTile);
+		miScroll.setMaxWidth(450);
+		miScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS); //para que la barra se vea siempre 
+		StackPane miStack = new StackPane(miScroll);
+		
+		//Poner separacion entre los rectangulos
+		miTile.setHgap(10);
+		miTile.setVgap(10);
+		//Poner margenes
+		miTile.setPadding(new Insets(10,10,10,10));
+		
+		Scene miScene = new Scene(miStack,600,400);
+		
+		primaryStage.setScene(miScene);
+		primaryStage.show();
+		
+	}

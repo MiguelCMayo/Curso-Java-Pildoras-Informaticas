@@ -1,0 +1,45 @@
+TreeItem
+
+ATRIBUTOS
+	TreeItem<String> root, renault, volvo, audi, seat;
+	TreeView miArbol = new TreeView<String>();
+	Label muestraNombres;
+
+CLASE START
+	root = new TreeItem<String>("Coches");
+	root.setExpanded(true);
+		
+	renault = new TreeItem<String>("Renault");
+	root.getChildren().add(renault);
+		renault.getChildren().add(new TreeItem<String>("Captur"));
+		renault.getChildren().add(new TreeItem<String>("Clio"));
+
+	miArbol = new TreeView<String>(root);
+
+	//IMPLEMENTAR LA FUNCION PARA VER EL NOMBRE ABAJO
+	miArbol.getSelectionModel().selectedItemProperty().addListener((valor, antiguoValor, nuevoValor)->
+	seleccionItemArbol((TreeItem<String>) nuevoValor));
+
+	//LABEL
+	muestraNombres = new Label();
+
+	//PANEL
+		
+	VBox miPane = new VBox();
+	miPane.setPadding(new Insets(20,20,20,20));
+	miPane.getChildren().addAll(miArbol, muestraNombres);
+	Scene scene = new Scene(miPane, 400, 400);
+	primaryStage.setScene(scene);
+	primaryStage.setTitle("Mis coches");
+	primaryStage.show();
+
+FUNCION PARA VER EL NOMBRE EN UN LABEL
+	public void seleccionItemArbol (TreeItem<String> item) {
+		if(item != null) {
+			muestraNombres.setText(item.getValue());
+			VentanaEmergente.mostrar("El coche seleccionado es:\n" + item.getValue(), "Coche selecionado");
+		}
+	}
+
+
+

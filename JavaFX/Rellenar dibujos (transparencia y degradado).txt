@@ -1,0 +1,61 @@
+TRANSPARENCIAS Y DEGRADADOS
+
+//PARA CREAR EL DEGRADADO:
+		LinearGradient deg1 = new LinearGradient(0,0,0,1,true, CycleMethod.NO_CYCLE, new Stop(0.0,Color.BLUE), new Stop(1.0, Color.RED));
+		
+		Rectangle rect2 = new Rectangle(50,5,100,200);
+		rect2.setStroke(Color.BLACK);
+		rect2.setFill(deg1); //rellena el rectangulo con el degradado
+		rect2.setStrokeWidth(3); //grosor del trazo
+		miGrupo.getChildren().add(rect2);	
+
+PARA RELLENAR CON TRANSPARENCIA
+
+		rect3.setFill(Color.rgb(200, 200, 200, 0.5)); //rellena el rectangulo con transparencia
+		
+RELLENAR UN TEXTO CON UN DEGRADADO
+
+		//crear degradado
+		LinearGradient deg1 = new LinearGradient(0,0,0,1,true, CycleMethod.NO_CYCLE, new Stop(0.0,Color.BLUE), new Stop(1.0, Color.RED));
+		
+		//crear texto
+		Text texto1 = new Text(100,250,"Hola alumnos");
+		
+		texto1.setFont(new Font("Times New Roman", 200));
+		texto1.setStroke(Color.BLACK); //color del borde del texto
+		texto1.setFill(deg1); //rellena el texto con el degradado
+		texto1.setStrokeWidth(3);
+		
+CLASS EFFECT, PARA CREAR EFECTOS
+		Rectangle rect1 = new Rectangle(50,50,100,100);
+		rect1.setFill(Color.LIGHTGRAY);
+		rect1.setStroke(Color.BLACK);
+		rect1.setStrokeWidth(3);
+		
+		//poner sombra al cuadrado
+		DropShadow sombra1 = new DropShadow();
+		rect1.setEffect(sombra1);
+		sombra1.setOffsetX(15); //tamaño de la sombra en x
+		sombra1.setOffsetY(15); //tamaño de la sombra en y
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

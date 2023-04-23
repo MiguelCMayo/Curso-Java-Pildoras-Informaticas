@@ -1,0 +1,21 @@
+VALIDAR INFORMACION TEXTFIELD (textFieldApp)
+
+	- PASAR UN NUMERO EN STRING A ENTERO (Integer.parseInt):
+	
+		if(mensaje.length()==0) {
+			mensaje = "El jugador " + txtJugador.getText() + " que juega en " + txtEquipo.getText() +
+					" anota " + (Integer.parseInt(txtPuntos.getText())+10) + " puntos por partido.";
+					
+	- CREAR UN METODO CON UN TRY/CATCH QUE LANCE UN MENSAJE DE ERROR:
+	
+		private boolean comprobarEntero(TextField f, String mensaje) {
+		
+			try {
+				Integer.parseInt(f.getText());
+				return true;
+			
+			}catch(NumberFormatException e) {
+				VentanaEmergente.mostrar(mensaje,  "Datos incorrectos");				
+				return false;			
+			}
+		}

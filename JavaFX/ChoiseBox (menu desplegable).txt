@@ -1,0 +1,22 @@
+Choicebox (menu desplegable)
+
+		//CREAR CHOICEBOX
+		jugadores= new ChoiceBox();
+		JugadoresObj jugador1= new JugadoresObj("Miguel", "Castellanos");
+		JugadoresObj jugador2= new JugadoresObj("Ana", "Perez");
+		JugadoresObj jugador3= new JugadoresObj("Paco", "Lopez");
+
+		jugadores.getItems().addAll(jugador1, jugador2, jugador3);
+		jugadores.setValue(jugador1); //PARA QUE APARAEZCA UNO DESDE EL INICIO
+			
+		jugadores.setOnAction(e -> accionBoton());
+		
+		//PANEL
+		BorderPane paneJugadores = new BorderPane(null, jugadores, null, null, null);
+		paneJugadores.setAlignment(jugadores, Pos.CENTER);
+		
+		//CREACION DE LA ESCENA
+		Scene miScene = new Scene(paneJugadores, 400, 200);
+		primaryStage.setScene(miScene);
+		primaryStage.setTitle("Jugadores");
+		primaryStage.show();

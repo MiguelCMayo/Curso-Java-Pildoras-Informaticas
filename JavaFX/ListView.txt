@@ -1,0 +1,27 @@
+LISTVIEW
+
+ATRIBUTOS:
+	ObservableList<String> viewIngredientes;
+    	ListView<String> listView;
+   	 StringBuilder mensajeIngredientes;
+   	 
+CLASE START
+	viewIngredientes = FXCollections.observableArrayList("peperoni", "queso", "Pimiento", "aceitunas", "champiñones", "tomate", "anchoas");
+	listView = new ListView<String>(viewIngredientes);
+		    
+	listView.setPrefWidth(120);
+	listView.setPrefHeight(100);
+	listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+		        
+	listView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends String> ov, String old_val, String new_val) -> {
+		ObservableList<String> selectedItems = listView.getSelectionModel().getSelectedItems();
+
+		StringBuilder builder = new StringBuilder();
+
+		for (String name : selectedItems) {
+		mensajeIngredientes = builder.append(name + "\n");
+		}
+
+		});
+
+	FlowPane paneIngredientes = new FlowPane(Orientation.VERTICAL, listView);

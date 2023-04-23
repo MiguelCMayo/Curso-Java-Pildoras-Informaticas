@@ -1,0 +1,62 @@
+ESTRUCTURA JAVAFX
+
+	-Stage -> Scene -> Pane
+	
+CREACION DE UN BOTON
+
+	Button miBoton = new Button("Haz clic");
+	miBoton.setOnAction(e->clicEnBoton());
+	root.setCenter(miBoton);
+	
+	//Metodo setOnAccion con la expresion LAMBDA (e llama al metodo clicEnBoton)
+	//root es el nombre del Pane y setCenter pone el boton en el centro, se pueden utilizar otros.
+	
+CREACION DE PANEL DE TEXTO (LABEL)
+
+	private Label miTexto = new Label();
+	
+	miTexto.setText("Texto añadido");
+	root.setTop(miTexto);
+		
+CREACION DE PANEL DE TEXTO (LABEL) AL PULSAR EL BOTON
+
+	private Label miTexto = new Label();
+	private int contador;
+	
+	//Al principio del try iniciamos el contador:
+	contador = 0;
+	
+	//Dentro del try:
+	miTexto.setText("Hiciste clic " + contador + " veces");
+	root.setTop(miTexto);
+	
+	//Metodo para el boton:
+	public void clicEnBoton() {
+		contador++;
+		if(contador == 1) miTexto.setText("Hiciste clic " + contador + " vez");
+		else miTexto.setText("Hiciste clic " + contador + " veces");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

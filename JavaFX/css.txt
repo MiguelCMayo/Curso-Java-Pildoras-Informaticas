@@ -1,0 +1,77 @@
+CAMBIAR EL TEMA DE LA PAGINA CON UN RADIOBUTTON
+
+	ToggleGroup tgStyle = new ToggleGroup();
+		        
+	RadioButton styleModena = new RadioButton("Style Moderna");
+	RadioButton styleCaspian = new RadioButton("Style Caspian");
+		        
+	styleModena.setToggleGroup(tgStyle);
+	styleCaspian.setToggleGroup(tgStyle);
+		        
+	styleModena.setSelected(true);
+		        
+	HBox paneStyle = new HBox(10, styleModena, styleCaspian);
+		        
+	styleModena.setOnAction(e -> setUserAgentStylesheet(STYLESHEET_MODENA));
+	styleCaspian.setOnAction(e -> setUserAgentStylesheet(STYLESHEET_CASPIAN));
+	
+AÑADIR UNA PAGINA CSS A UN PROYECTO
+
+	- Se crea un archivo CSS, delante de las propiedades se pone -fx-
+		.root{
+		-fx-background-color:red;
+		}
+	- Para enlazar la pagina al proyecto:
+		miScene.getStylesheets().add(getClass().getResource("misEstilos.css").toExternalForm());
+		
+ESTILO INLINE: DARLE ESTILO SOLO A UN COMPONENTE DLE PROYECTO
+
+	botonOk.setStyle("-fx-font-size:16pt");
+
+
+ESTILO POR NODOS
+
+	Button{
+	-fx-background-color:yellow;
+	}
+
+	CheckBox{
+	-fx-background-color:yellow;
+	}
+
+	TextField{
+	-fx-background-color:GREEN;
+	}
+
+	.mi_estilo_propio{
+	-fx-background-color:blue;
+	-fx-font-size:18;
+	-fx-underline:true;
+	-fx-text-fill:white;
+	}
+	
+	- LUEGO SE AÑADE: lbNombre.getStyleClass().add("mi_estilo_propio");
+
+ESTILO ID: SOLO A UN ELEMENTO
+
+	#titulo{
+	-fx-text-fill:white;
+	-fx-font-size:30;
+	}
+
+	- SE AÑADE: txtCabecera.setId("titulo");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

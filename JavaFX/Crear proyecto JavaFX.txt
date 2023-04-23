@@ -1,0 +1,5 @@
+Crear proyecto Java FX
+
+1. File -> New -> Other -> JavaFX Proyect -> Next
+
+2. En la carpeta raiz clic derecho -> Properties -> Java Build Path -> Libraries -> add Library -> User Library -> JavaFX

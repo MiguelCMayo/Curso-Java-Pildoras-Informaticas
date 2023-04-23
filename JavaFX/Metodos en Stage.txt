@@ -1,0 +1,18 @@
+Para editar el stage utilizamos el nombre seguido del metodo dentro del try
+	
+	//Para no poder cambiar el tamaño de la pantalla
+			primaryStage.setResizable(false);
+	
+	//Indica el tamaño minimo y maximo de la pantalla
+			primaryStage.setMinWidth(200);
+			primaryStage.setMinHeight(200);
+			primaryStage.setMaxWidth(600);
+			primaryStage.setMaxHeight(600);
+
+	//Abre la ventana maximizada al maximo
+			primaryStage.setMaximized(true);
+			
+	// Abre la ventana usando toda la pantalla (como un video)
+			primaryStage.setFullScreen(true);
+			
+	

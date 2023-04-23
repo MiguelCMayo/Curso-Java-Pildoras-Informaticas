@@ -1,0 +1,33 @@
+.root{
+	-fx-background-color:red;
+	background-color:red;
+	-fx-font-family:"serif";
+	font-family:"serif";
+	-fx-font-size:18;
+	font-size:18;
+}
+
+Button{
+	-fx-background-color:yellow;
+}
+
+CheckBox{
+	-fx-background-color:yellow;
+}
+
+TextField{
+	-fx-background-color:GREEN;
+}
+
+.mi_estilo_propio{
+	-fx-background-color:blue;
+	-fx-font-size:18;
+	-fx-underline:true;
+	-fx-text-fill:white;
+}
+
+#titulo{
+	-fx-text-fill:white;
+	-fx-font-size:30;
+}
+
